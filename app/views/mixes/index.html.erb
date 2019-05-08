@@ -1,0 +1,37 @@
+<div class="what">
+  <div class="banner-mixes-container">
+    <span class="hidden-title"><%= title 'DJ Mixes' %></span>
+    <%= render 'navbar' %>
+    <h2 class="banner-mixes-title">
+      DJ Mixes
+    </h2>
+  </div>
+  <div class="tracks-content-container">
+    <% @mixes.each do |mix| %>
+      <div class="track-card">
+        <div class="track-artwork">
+          <%= image_tag(mix.artwork, height: "200", width: "200", alt: mix.title) %>
+        </div>
+        <div class="track-info">
+          <div class="track-title">
+            <%= link_to mix_path(mix), :action => 'go' do %>
+              <%= mix.title %>
+            <% end %>
+          </div>
+          <div class="track-genre">
+            <%= mix.genre %>
+              •
+            <%= mix.date.to_s[0..3] %>
+          </div>
+          <%= link_to mix_path(mix), :action => 'go', class: "track-button" do %>
+            <i class="fas fa-volume-up"></i>
+            Listen
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer">
+    <%= render 'footer' %>
+  </div>
+</div>

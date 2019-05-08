@@ -1,0 +1,26 @@
+<div class="navbar-container">
+  <div class="navbar-flexbox">
+    <div class="navbar-logo">
+      <%= link_to "/" do %>
+        <h1 class="navbar-logo-heading">strachan</h1><br/>
+        <div class="navbar-logo-subtext">dj & producer</div>
+      <% end %>
+    </div>
+    <div class="navbar-links hidden-xs hidden-sm">
+      <div class="navbar-link-list">
+        <div class="navbar-link">
+          <%= link_to "tracks", tracks_url  %>
+        </div>
+        <div class="navbar-link">
+          <%= link_to "dj mixes", mixes_url %>
+        </div>
+        <div class="navbar-link">
+          <%= link_to "events", events_url  %>
+        </div>
+        <div class="navbar-link">
+          <%= link_to "blog", "/blog" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

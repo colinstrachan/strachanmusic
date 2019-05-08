@@ -1,2 +1,98 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="what">
+  <div class="banner-container">
+    <span class="hidden-title"><%= title 'DJ & Producer' %></span>
+    <% description 'Colin Strachan is a British electronica DJ & producer currently based in Montreal, Canada.' %>
+    <% keywords 'Strachan, Colin, Colin Strachan, music, dj, producer, musician, tracks, mixes, events, bookings, electronic music, progressive house, techno, electronica, trance' %>
+    <%= render 'navbar' %>
+    <div class="shops-container">
+      <h3>Listen on:</h3>
+      <div class="row shops-row">
+        <div class="col-lg-3 col-sm-6 shop">
+          <%= link_to "https://open.spotify.com/artist/0tqRncpyvIfcB7u1LVXLPq" do %>
+            <%= image_tag("spotify-logo-text.png", height: "50", alt: "Shopify") %>
+          <% end %>
+        </div>
+        <div class="col-lg-3 col-sm-6 shop">
+          <%= link_to "https://itunes.apple.com/ca/artist/strachan/193507396" do %>
+            <%= image_tag("apple-logo-text.png", height: "50", alt: "Shopify") %>
+          <% end %>
+        </div>
+        <div class="col-lg-3 col-sm-6 shop">
+          <%= link_to "https://www.amazon.com/Story-Ocean-Strachan/dp/B07PV43CKY" do %>
+            <%= image_tag("amazon-logo-text.png", height: "50", alt: "Shopify") %>
+          <% end %>
+        </div>
+        <div class="col-lg-3 col-sm-6 shop">
+          <%= link_to "https://play.google.com/music/preview/Arvtcmj5qeamabxtpezjqua3bz4" do %>
+            <%= image_tag("google-logo-text.png", height: "50", alt: "Shopify") %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="featured-container">
+    <div class="featured-cards row">
+      <%= link_to "mixes/live-at-andesground-festival-cusco-peru-31-12-2018", class: "featured-mix col-lg-6 col-sm-12" do %>
+        <div class="featured-category">
+          featured mix
+        </div>
+        <div class="featured-title">
+          Live @ Andesground Festival, Peru
+        </div>
+      <% end %>
+      <%= link_to "tracks/story-of-the-ocean", class: "featured-track col-lg-3 col-sm-6" do %>
+        <div class="featured-category">
+          featured track
+        </div>
+        <div class="featured-title">
+          Story Of The Ocean
+        </div>
+      <% end %>
+      <%= link_to "blog", class: "featured-blog col-lg-3 col-sm-6" do %>
+        <div class="featured-category">
+          featured blog
+        </div>
+        <div class="featured-title">
+          5 Tips For Sound Design Beginners
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="body-container">
+    <div class="row">
+      <div class="col-lg-3 col-xs-1">
+      </div>
+      <div class="col-lg-6 col-xs-10 body-content">
+        <h2>Strachan is a British electronica DJ and producer currently based in Montréal, Canada.</h2>
+        <p>
+          Colin Strachan was born in Edinburgh and grew up in the north of England. His insatiable passion for electronic music began in his childhood after picking up a second-hand copy of Robert Miles’ <i>Dreamland</i> at a village market.
+        </p>
+        <p>
+          Colin began making music for amateur video games at the age of 13, and his first track <i>Surrounding You</i> became one of 2001's most downloaded tracks on the online music community TraxInSpace. Getting his first vintage synths two years later, Colin developed a hardware-first approach to production that yielded a bootleg of Coldplay’s <i>Fix You</i> in 2005. The remix was picked up by DJs across Europe, including BBC Radio 1's Judge Jules and Gatecrasher resident Scott Bond.
+        </p>
+        <p>
+          At this point Colin had just moved to Birmingham, where he joined the city's 12TEN DJ Society – a thriving community of young, creative performers. The society hosted successful events at the renowned Rainbow club and the legendary Custard Factory, supporting DJs like Pete Tong, Richard Dinsdale and Martijn Ten Velden over a period of three years.
+        </p>
+        <p>
+          In 2014, Colin moved to Montreal, Quebec, looking to reignite his creative potential. The city’s open-minded and multicultural landscape led him to collaborate with artists from Venezuela to Lebanon, in both live and studio settings.
+        </p>
+        <p>
+          Colin's affection for progressive house inspired him to spend 2018 in Buenos Aires, Argentina, where he could share his distinctive fusion of melancholic harmonies and twisted grooves with the world's most dedicated progressive scene.
+        </p>
+        <div class="spacer">
+        </div>
+        <div class="ra-stuff">
+          <%= link_to("http://www.residentadvisor.net/dj/strachan") do %>
+            <%= image_tag("resident-advisor-logo", width: "150") %><br/>
+            Resident Advisor
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-3 col-xs-1">
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <%= render 'footer' %>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="what">
+  <div class="banner-tracks-container">
+    <span class="hidden-title"><%= title @track.title %></span>
+    <%= render 'navbar' %>
+    <h2 class="banner-tracks-title">
+      Tracks
+    </h2>
+  </div>
+  <div class="singletrack-content-container">
+    <div class="back-button">
+      <%= link_to "< Back", tracks_url  %>
+    </div>
+    <div class="singletrack-content-header">
+      <div class="singletrack-artwork">
+        <%= image_tag(@track.artwork, height: "400", width: "400", alt: @track.title) %>
+      </div>
+      <div class="singletrack-info">
+        <h3 class="singletrack-title">
+          <%= @track.title %>
+        </h3>
+        <div class="singletrack-genre">
+          <%= @track.genre %>
+            •
+          <%= @track.date.to_s[0..3] %>
+        </div>
+        <div class="singletrack-shops">
+          <% if @track.spotify_url != nil %>
+            <%= link_to "https://open.spotify.com/album/#{@track.spotify_url}" do %>
+              <%= image_tag('spotify-logo-small', height: "50", width: "50", class: "logo", alt: 'Buy on Spotify') %>
+            <% end %>
+          <% end %>
+          <% if @track.apple_url != nil %>
+            <%= link_to "https://itunes.apple.com/us/album/#{@track.apple_url}" do %>
+              <%= image_tag('apple-logo-small', height: "50", width: "50", class: "logo", alt: 'Buy on Apple Music') %>
+            <% end %>
+          <% end %>
+          <% if @track.google_url != nil %>
+            <%= link_to "https://play.google.com/music/preview/#{@track.google_url}" do %>
+              <%= image_tag('google-logo-small', height: "50", width: "50", class: "logo", alt: 'Buy on Google Play Music') %>
+            <% end %>
+          <% end %>
+          <% if @track.amazon_url != nil %>
+            <%= link_to "https://www.amazon.com/#{@track.amazon_url}" do %>
+              <%= image_tag('amazon-logo-small', height: "50", width: "50", class: "logo", alt: 'Buy on Amazon Music') %>
+            <% end %>
+          <% end %>
+          <% if @track.bandcamp_url != nil %>
+            <%= link_to "https://strachan.bandcamp.com/track/#{@track.bandcamp_url}" do %>
+              <%= image_tag('bandcamp-logo-small', height: "50", width: "50", class: "logo", alt: 'Buy on Bandcamp') %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="singletrack-content-description">
+          <%= @track.description %>
+          <% if @track.collab_artist != nil %>
+            <br/><br/>This track features
+            <%= link_to @track.collab_artist, @track.collab_url %>.
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="singletrack-player">
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/<%= @track.soundcloud_url %>&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+  </div>
+  <div class="footer">
+    <%= render 'footer' %>
+  </div>
+</div>

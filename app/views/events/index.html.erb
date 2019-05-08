@@ -1,0 +1,39 @@
+<div class="what">
+  <div class="banner-events-container">
+    <span class="hidden-title"><%= title 'Events' %></span>
+    <%= render 'navbar' %>
+    <h2 class="banner-events-title">
+      Events
+    </h2>
+  </div>
+  <div class="tracks-content-container">
+    <% @events.each do |event| %>
+      <div class="track-card">
+        <div class="track-artwork">
+          <%= image_tag(event.artwork, height: "200", width: "200", alt: event.title) %>
+        </div>
+        <div class="track-info">
+          <div class="track-title">
+            <%= link_to event_path(event), :action => 'go' do %>
+              <%= event.title %>
+            <% end %>
+          </div>
+          <div class="track-genre">
+            <%= image_tag(event.country, height: "25", width: "25", alt: event.country) %>
+              •
+            <%= event.venue %>
+              •
+            <%= event.date %>
+          </div>
+          <%= link_to event_path(event), :action => 'go', class: "track-button" do %>
+            <i class="fas fa-calendar-week"></i>
+            Event Details
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer">
+    <%= render 'footer' %>
+  </div>
+</div>
